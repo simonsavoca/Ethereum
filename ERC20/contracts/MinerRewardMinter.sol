@@ -10,6 +10,6 @@ contract ERC20MinerRewardMinter {
     }
 
     function mintMinerReward() public {
-        _token.mint(block.coinbase, 1000);
+        _token.mint(block.coinbase, 1000000000000000000);
     }
 }
