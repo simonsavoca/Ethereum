@@ -35,6 +35,14 @@ Run with:
 geth attach ./data/PrivateBlockchain/geth.ipc
 ```
 
+New account:
+personal.newAccount("PASSPHRASE")
+The forst account become eth.coinbase
+
+Unlock Account:
+
+personal.unlockAccount("ADDRESS","PASSPHRASE")
+
 #### load functionalities
 -- preload "./scripts/myscripts.js"
 
@@ -57,6 +65,10 @@ function newTransfer(sender,receiver,password,amount) {
   eth.sendTransaction({from:sender, to:receiver, value: ether});
 };
 ```
+
+#### Import account from metamask:
+On metamask account copy the private key, and paste it in a file.
+On the chain directory: `geth account import FILE`
 
 ### Sources
 - https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu

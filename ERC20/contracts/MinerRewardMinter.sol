@@ -2,7 +2,7 @@ pragma solidity ^0.6.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract MinerRewardMinter {
+contract ERC20MinerRewardMinter {
     ERC20DeployReady _token;
 
     constructor(ERC20DeployReady token) public {
