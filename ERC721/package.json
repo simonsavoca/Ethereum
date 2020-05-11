@@ -1,11 +1,8 @@
 {
-  "name": "ERC20",
+  "name": "ERC721",
   "version": "1.0.0",
   "description": "",
   "main": "truffle-config.js",
-  "directories": {
-    "test": "test"
-  },
   "dependencies":{
     "@openzeppelin/contracts":"^3.0.0",
     "solc": "^0.6.0"
