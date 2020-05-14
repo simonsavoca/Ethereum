@@ -56,8 +56,8 @@ MinimumAcceptedPOW = 2e-01
 RestrictConnectionBetweenLightClients = true
 
 [Node]
-UserIdent = "DuckChain_MasterNode"
-DataDir = "/home/simon/private-ethereum/data/DuckChain_MasterNode"
+UserIdent = "DuckChain_BootNode"
+DataDir = "/home/simon/private-ethereum/data/DuckChain_BootNode"
 omitempty = ""
 IPCPath = "geth.ipc"
 HTTPHost = "127.0.0.1"
@@ -74,7 +74,8 @@ MaxPeers = 50
 NoDiscovery = false
 BootstrapNodes = []
 BootstrapNodesV5 = []
-TrustedNodes = ["enode://c1d6b9396bf3e5f78bf129b81f5e5ce8a99a4767b314db140d8c8ff326d7c13bb60b55a7a0acb59573d7793c4fbb8a89de21caadc0cb842cc2720a18f2b714aa@82.64.158.44:30304","enode://45015565ff1de04d2f595218209ed0ba8fe8bf294490b52e15c8c89d03e11174e62f7c7cdbafcc55008fd82a3cf94afa284831c02357d8ecf10231577d41d912@82.64.158.44:30305"]
+StaticNodes = []
+TrustedNodes = []
 ListenAddr = ":30303"
 EnableMsgEvents = false
 

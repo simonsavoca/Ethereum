@@ -73,8 +73,8 @@ MaxPeers = 50
 NoDiscovery = true
 BootstrapNodes = []
 BootstrapNodesV5 = []
-StaticNodes = ["enode://ab25ff8f7501f2e0a1572fcfe96ecf356bbce39f33ec9f4b6f54ecb8d8365ee85d6535f954e2476cc8f9cfe397752e8a78b6e4c35382e8dab36c770706426cb2@82.64.158.44:30303"]
-TrustedNodes = ["enode://ab25ff8f7501f2e0a1572fcfe96ecf356bbce39f33ec9f4b6f54ecb8d8365ee85d6535f954e2476cc8f9cfe397752e8a78b6e4c35382e8dab36c770706426cb2@82.64.158.44:30303"]
+StaticNodes = []
+TrustedNodes = []
 ListenAddr = ":30304"
 EnableMsgEvents = false
 
