@@ -70,9 +70,9 @@ GraphQLVirtualHosts = ["localhost"]
 
 [Node.P2P]
 MaxPeers = 50
-NoDiscovery = true
-BootstrapNodes = ["enode://79fa7a470f1545e6bc721274c00d999e2295cb94e6bee2f432fb2c019861db216d593ea89bcc2222edc5edcd3be0346e8c545ed1c55442d12291f67c76f4df93@82.64.158.44:30303"]
-BootstrapNodesV5 = []
+NoDiscovery = false
+BootstrapNodes = ["enode://ac3c0164dfa2e7e7b60c09fc3acc7130197b0ad0c87b990918b8bba111877f24af8b5cb53e28ff1b7935d8712c279e81529f78810e7d5f8542338643252a87e6@82.64.158.44:30303"]
+BootstrapNodesV5 = ["enode://ac3c0164dfa2e7e7b60c09fc3acc7130197b0ad0c87b990918b8bba111877f24af8b5cb53e28ff1b7935d8712c279e81529f78810e7d5f8542338643252a87e6@82.64.158.44:30303"]
 StaticNodes = []
 TrustedNodes = []
 ListenAddr = ":30303"

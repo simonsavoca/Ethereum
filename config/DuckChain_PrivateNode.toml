@@ -56,11 +56,10 @@ MinimumAcceptedPOW = 2e-01
 RestrictConnectionBetweenLightClients = true
 
 [Node]
-UserIdent = "DuckChain_BootNode"
-DataDir = "/home/simon/private-ethereum/data/DuckChain_BootNode"
+UserIdent = "DuckChain_PrivateNode01"
+DataDir = "/home/simon/private-ethereum/data/DuckChain_PrivateNode01"
 omitempty = ""
 IPCPath = "geth.ipc"
-HTTPHost = "127.0.0.1"
 HTTPPort = 8545
 HTTPVirtualHosts = ["localhost"]
 HTTPModules = ["net", "web3", "eth"]
@@ -71,12 +70,12 @@ GraphQLVirtualHosts = ["localhost"]
 
 [Node.P2P]
 MaxPeers = 50
-NoDiscovery = false
+NoDiscovery = true
 BootstrapNodes = []
 BootstrapNodesV5 = []
-StaticNodes = ["enode://32b24fe9a1ee057feaee44a2017150b7d1795e34a595153cf6ce9d80b9a8612c9e4b886587b6c7b5f5fbabee5e7554988b95d3606d1bca8211ed97c1287ef7dd@82.64.158.44:30304","enode://a10a6bdd34081196ca49c0c9b79a019a3f3e449fed0aef86d2f385d678f7196c6bfde3c511a44e3f47c79b0c60930311db3ebfaebd75ebcbfaa65279d9756fcd@82.64.158.44:30305"]
-TrustedNodes = ["enode://32b24fe9a1ee057feaee44a2017150b7d1795e34a595153cf6ce9d80b9a8612c9e4b886587b6c7b5f5fbabee5e7554988b95d3606d1bca8211ed97c1287ef7dd@82.64.158.44:30304","enode://a10a6bdd34081196ca49c0c9b79a019a3f3e449fed0aef86d2f385d678f7196c6bfde3c511a44e3f47c79b0c60930311db3ebfaebd75ebcbfaa65279d9756fcd@82.64.158.44:30305"]
-ListenAddr = ":30303"
+StaticNodes = ["enode://79fa7a470f1545e6bc721274c00d999e2295cb94e6bee2f432fb2c019861db216d593ea89bcc2222edc5edcd3be0346e8c545ed1c55442d12291f67c76f4df93@82.64.158.44:30303"]
+TrustedNodes = ["enode://79fa7a470f1545e6bc721274c00d999e2295cb94e6bee2f432fb2c019861db216d593ea89bcc2222edc5edcd3be0346e8c545ed1c55442d12291f67c76f4df93@82.64.158.44:30303"]
+ListenAddr = ":30304"
 EnableMsgEvents = false
 
 [Node.HTTPTimeouts]

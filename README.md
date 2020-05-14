@@ -1,5 +1,10 @@
 # Ethereum
 
+## Services
+- Ethereum Name Service
+- Local ERC20 Token to manage transactions
+
+
 ## Private Blockchain
 
 ### Installation
@@ -15,49 +20,52 @@ Into a dedicated folder:
 geth --datadir ./data/PrivateBlockchain init ./config/genesis.json
 ```
 
-### Run
+### Run the node
 ```
 geth --datadir ./data/PrivateBlockchain --networkid 9999  --nodiscover --maxpeers 0
 ```
-
-### Custom
-Management with API:
+#### load functionalities
+`-- preload "./scripts/myscripts.js"`
+#### Management with API
 ```
---rpc --rpcapi "eth,web3,personal,admin" --allow-insecure-unlock --rpc --rpccorsdomain "*"
+--rpc --rpcapi "eth,web3,personal,admin" --allow-insecure-unlock --rpccorsdomain "*"
 ```
-With rpcaddr:
+#### with rpcaddr
 ```
 --rpcaddr "192.168.0.250"
 ```
+#### Import account from metamask:
+On metamask account copy the private key, and paste it in a file.
+On the chain directory: `geth account import FILE`
+
+### Multiples nodes
+Always init the node with the same genesis.json as the first node.
+Then 3 choices:
+
+- Add peer staticly: Needed if your node is runnning with `--nodiscover` with a static-node.json ont he data folder of the node
+For others cases
+- Run the new node with `--bootnodes enode://... with the correct value
+- Run a Bootstrap node and use `--bootnodes enode://...` with the correct value
+- Add the peer at the instance with `admin.addPeer("enode://...")` into the console
+
+### Config with TOML
+https://github.com/zhiyuan2007/sample-ethereum.toml
+
+
 ### Console
 Run with:
 ```
 geth attach ./data/PrivateBlockchain/geth.ipc
 ```
 
-New account:
-personal.newAccount("PASSPHRASE")
+#### New account
+`personal.newAccount("PASSPHRASE")`
 The forst account become eth.coinbase
 
-Unlock Account:
+#### Unlock Account
+`personal.unlockAccount("ADDRESS","PASSPHRASE")`
 
-personal.unlockAccount("ADDRESS","PASSPHRASE")
-
-#### load functionalities
--- preload "./scripts/myscripts.js"
-
-#### New account
-personal.newAccount("passphrase")
-
-#### Transfer
-```javascript
-personal.unlockAccount(eth.coinbase,"passphrase")
-var sender = eth.accounts[0];
-var receiver = eth.accounts[1];
-var amount = web3.toWei(1, "ether")
-eth.sendTransaction({from:sender, to:receiver, value: amount})
-```
-
+#### Transfer fucntion
 ```javascript
 function newTransfer(sender,receiver,password,amount) {
   personal.unlockAccount(sender, password);
@@ -65,10 +73,6 @@ function newTransfer(sender,receiver,password,amount) {
   eth.sendTransaction({from:sender, to:receiver, value: ether});
 };
 ```
-
-#### Import account from metamask:
-On metamask account copy the private key, and paste it in a file.
-On the chain directory: `geth account import FILE`
 
 ### Sources
 - https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu
@@ -80,32 +84,7 @@ On the chain directory: `geth account import FILE`
 - https://myhsts.org/tutorial-learn-how-to-work-with-ethereum-private-network-with-golang-with-geth.php
 - https://ethereum.stackexchange.com/questions/2531/common-useful-javascript-snippets-for-geth
 
-https://www.codeooze.com/blockchain/ethereum-wallet-private-chain-setup/
-https://github.com/ethereum/go-ethereum/wiki/Contract-Tutorial
-https://www.trufflesuite.com/docs/truffle/getting-started/compiling-contracts
-
-## Smart contracts
-
-```
-npm init -f
-npm install truffle
-npm install solc
-npm instal @openzeppelin/contracts
-```
-
-
-## Procedure
-Into ERC20 folder:
-- Configure truffle-config.js
-- Be sure to have enough ETH into your balance.
-- In Geth, mine some ether if needed and unlock your account:
-```javascript
-miner.start();admin.sleepBlocks(20);miner.stop();
-personnal.unlockaccount(eth.coinbase."passphrase")
-```
-- Edit migrations/2_deploy_contract.js and define the contract you want to deploy
-- In ERC20 folder, compile and migrate contract:
-```
-truffle compile
-truffle migrate (miner need to be running to write contract on the blochain)
-```
+### Sources
+- https://www.codeooze.com/blockchain/ethereum-wallet-private-chain-setup/
+- https://github.com/ethereum/go-ethereum/wiki/Contract-Tutorial
+- https://www.trufflesuite.com/docs/truffle/getting-started/compiling-contracts

@@ -56,8 +56,8 @@ MinimumAcceptedPOW = 2e-01
 RestrictConnectionBetweenLightClients = true
 
 [Node]
-UserIdent = "DuckChain_PeerNode01"
-DataDir = "/home/simon/private-ethereum/data/DuckChain_PeerNode01"
+UserIdent = "DuckChain_PublicNode01"
+DataDir = "/home/simon/private-ethereum/data/DuckChain_PublicNode01"
 omitempty = ""
 IPCPath = "geth.ipc"
 HTTPPort = 8545
@@ -70,12 +70,12 @@ GraphQLVirtualHosts = ["localhost"]
 
 [Node.P2P]
 MaxPeers = 50
-NoDiscovery = true
+NoDiscovery = false
 BootstrapNodes = []
 BootstrapNodesV5 = []
 StaticNodes = []
 TrustedNodes = []
-ListenAddr = ":30304"
+ListenAddr = ":30305"
 EnableMsgEvents = false
 
 [Node.HTTPTimeouts]
