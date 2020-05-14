@@ -1,6 +1,6 @@
 [Eth]
 NetworkId = 9999
-SyncMode = "full"
+SyncMode = "fast"
 DiscoveryURLs = []
 NoPruning = false
 NoPrefetch = false
@@ -56,11 +56,10 @@ MinimumAcceptedPOW = 2e-01
 RestrictConnectionBetweenLightClients = true
 
 [Node]
-UserIdent = "DuckChain_BootNode"
-DataDir = "/home/simon/private-ethereum/data/DuckChain_BootNode"
+UserIdent = "DuckChain_Client"
+DataDir = "/home/simon/DuckChain_Client"
 omitempty = ""
 IPCPath = "geth.ipc"
-HTTPHost = "127.0.0.1"
 HTTPPort = 8545
 HTTPVirtualHosts = ["localhost"]
 HTTPModules = ["net", "web3", "eth"]
@@ -71,8 +70,8 @@ GraphQLVirtualHosts = ["localhost"]
 
 [Node.P2P]
 MaxPeers = 50
-NoDiscovery = false
-BootstrapNodes = []
+NoDiscovery = true
+BootstrapNodes = ["enode://79fa7a470f1545e6bc721274c00d999e2295cb94e6bee2f432fb2c019861db216d593ea89bcc2222edc5edcd3be0346e8c545ed1c55442d12291f67c76f4df93@82.64.158.44:30303"]
 BootstrapNodesV5 = []
 StaticNodes = []
 TrustedNodes = []
