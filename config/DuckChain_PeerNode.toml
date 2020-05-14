@@ -1,0 +1,84 @@
+[Eth]
+NetworkId = 9999
+SyncMode = "full"
+DiscoveryURLs = []
+NoPruning = false
+NoPrefetch = false
+LightPeers = 100
+UltraLightFraction = 75
+DatabaseCache = 512
+DatabaseFreezer = ""
+TrieCleanCache = 256
+TrieDirtyCache = 256
+TrieTimeout = 3600000000000
+EnablePreimageRecording = false
+EWASMInterpreter = ""
+EVMInterpreter = ""
+
+[Eth.Miner]
+GasFloor = 8000000
+GasCeil = 8000000
+GasPrice = 1000000000
+Recommit = 3000000000
+Noverify = false
+
+[Eth.Ethash]
+CacheDir = "ethash"
+CachesInMem = 2
+CachesOnDisk = 3
+CachesLockMmap = false
+DatasetDir = "/home/simon/.ethash"
+DatasetsInMem = 1
+DatasetsOnDisk = 2
+DatasetsLockMmap = false
+PowMode = 0
+
+[Eth.TxPool]
+Locals = []
+NoLocals = false
+Journal = "transactions.rlp"
+Rejournal = 3600000000000
+PriceLimit = 1
+PriceBump = 10
+AccountSlots = 16
+GlobalSlots = 4096
+AccountQueue = 64
+GlobalQueue = 1024
+Lifetime = 10800000000000
+
+[Eth.GPO]
+Blocks = 20
+Percentile = 60
+
+[Shh]
+MaxMessageSize = 1048576
+MinimumAcceptedPOW = 2e-01
+RestrictConnectionBetweenLightClients = true
+
+[Node]
+UserIdent = "DuckChain_PeerNode01"
+DataDir = "/home/simon/private-ethereum/data/DuckChain_PeerNode01"
+omitempty = ""
+IPCPath = "geth.ipc"
+HTTPPort = 8545
+HTTPVirtualHosts = ["localhost"]
+HTTPModules = ["net", "web3", "eth"]
+WSPort = 8546
+WSModules = ["net", "web3", "eth"]
+GraphQLPort = 8547
+GraphQLVirtualHosts = ["localhost"]
+
+[Node.P2P]
+MaxPeers = 50
+NoDiscovery = true
+BootstrapNodes = []
+BootstrapNodesV5 = []
+StaticNodes = ["enode://ab25ff8f7501f2e0a1572fcfe96ecf356bbce39f33ec9f4b6f54ecb8d8365ee85d6535f954e2476cc8f9cfe397752e8a78b6e4c35382e8dab36c770706426cb2@82.64.158.44:30303"]
+TrustedNodes = ["enode://ab25ff8f7501f2e0a1572fcfe96ecf356bbce39f33ec9f4b6f54ecb8d8365ee85d6535f954e2476cc8f9cfe397752e8a78b6e4c35382e8dab36c770706426cb2@82.64.158.44:30303"]
+ListenAddr = ":30304"
+EnableMsgEvents = false
+
+[Node.HTTPTimeouts]
+ReadTimeout = 30000000000
+WriteTimeout = 30000000000
+IdleTimeout = 120000000000
